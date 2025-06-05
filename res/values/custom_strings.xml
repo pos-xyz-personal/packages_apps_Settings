@@ -318,4 +318,8 @@
     <!-- Lockscreen battery info indicator -->
     <string name="lockscreen_battery_info_title">Charging Info on Lock Screen</string>
     <string name="lockscreen_battery_info_summary">Show current, voltage, wattage, and temperature while charging</string>
+
+    <!-- Screen off AOD -->
+    <string name="screen_off_aod_enabled_title">Screen Off AOD</string>
+    <string name="screen_off_aod_enabled_summary">Briefly show the Always-On Display when the screen turns off</string>
 </resources>

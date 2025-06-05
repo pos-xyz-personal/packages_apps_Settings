@@ -104,6 +104,12 @@
             settings:keywords="@string/keywords_always_show_time_info"
             settings:controller="com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController"
             settings:userRestriction="no_ambient_display" />
+        
+        <com.android.settings.custom.preference.SystemSettingSwitchPreference
+            android:key="screen_off_aod_enabled"
+            android:title="@string/screen_off_aod_enabled_title"
+            android:summary="@string/screen_off_aod_enabled_summary"
+            android:defaultValue="true" />
 
         <com.android.settingslib.PrimarySwitchPreference
             android:key="gesture_tap"
