@@ -122,6 +122,12 @@
         android:fragment="com.android.settings.applications.specialaccess.SpecialAccessSettings"
         android:title="@string/special_access"
         android:order="20"/>
+    
+    <com.android.settings.applications.KeyboxDataPreference
+        android:key="keybox_data_setting"
+        android:title="@string/keybox_data_title"
+        android:summary="@string/keybox_data_summary"
+        android:defaultValue=""/>
 
     <PreferenceCategory
         android:key="advanced_category"
