@@ -85,7 +85,7 @@ public class ContentProtectionTogglePreferenceControllerTest {
     @Before
     public void setUp() {
         mShadowUserManager = ShadowUserManager.getShadow();
-        mShadowUserManager.setGuestUser(false);
+        mShadowUserManager.setIsAdminUser(true);
         mController = new TestContentProtectionTogglePreferenceController();
         SettingsMainSwitchPreference switchPreference = new SettingsMainSwitchPreference(mContext);
         when(mMockPreferenceScreen.findPreference(mController.getPreferenceKey()))
@@ -277,8 +277,8 @@ public class ContentProtectionTogglePreferenceControllerTest {
     }
 
     @Test
-    public void updateState_flagEnabled_noEnforcedAdmin_guestUser_switchBarDisabled() {
-        mShadowUserManager.setGuestUser(true);
+    public void updateState_flagEnabled_noEnforcedAdmin_nonAdminUser_switchBarDisabled() {
+        mShadowUserManager.setIsAdminUser(false);
         mSetFlagsRule.enableFlags(FLAG_MANAGE_DEVICE_POLICY_ENABLED);
         mContentProtectionPolicy = DevicePolicyManager.CONTENT_PROTECTION_ENABLED;
         setupForUpdateState();
@@ -289,7 +289,8 @@ public class ContentProtectionTogglePreferenceControllerTest {
     }
 
     @Test
-    public void updateState_flagEnabled_noEnforcedAdmin_nonGuestUser_switchBarEnabled() {
+    public void updateState_flagEnabled_noEnforcedAdmin_adminUser_switchBarEnabled() {
+        mShadowUserManager.setIsAdminUser(true);
         mSetFlagsRule.enableFlags(FLAG_MANAGE_DEVICE_POLICY_ENABLED);
         mContentProtectionPolicy = DevicePolicyManager.CONTENT_PROTECTION_ENABLED;
         setupForUpdateState();
